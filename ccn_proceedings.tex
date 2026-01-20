@@ -1,223 +1,271 @@
 % -----------------------------------------------------------------------
 % CCN Conference - Proceedings Track Template
-% For papers up to 8 pages (excluding references).
+% For papers up to 8 pages (excluding references plus supplement).
 % -----------------------------------------------------------------------
-\documentclass{ccn}
+\documentclass{ccn}  % options: submission (default), preprint, proceedings, extended-abstract
 
+% TODO: For preprints (not accepted), use:
+%   \documentclass[preprint]{ccn}
+
+% TODO: For camera-ready proceedings (after acceptance), use:
+%   \documentclass[proceedings]{ccn}
+%   \ccndoi{10.1234/ccn.2026.001}  % required; assigned by CCN
+
+% TODO: Add your bibliography file(s).
 \addbibresource{ccn_references.bib}
 
-\title{Formatting instructions for CCN 2025 proceedings submission}
- 
-\author{{\large \bf Anonymous authors} \\
-Double blind review}
-%   A Department, 1234 Example Street\\
-% A City, State 12345 A country
-%   \AND {\large \bf Another Person (AnotherPerson@this.planet.edu)} \\
-%   A Department, 1234 Example Street\\
-% A City, State 12345 A country}
+
+\title{Formatting Instructions for CCN 2026 Proceedings}
+
+% Authors are automatically anonymized in submission mode.
+%
+% --- STYLE 1: Single author ---
+% \author{Jane Smith \\
+%   Department of Neuroscience, University Name \\
+%   \email{jane@example.edu}}
+%
+% --- STYLE 2: Multiple authors, same affiliation (comma-separated, no \And) ---
+% \author{Jane Smith, John Doe, and Alice Brown \\
+%   Department of Neuroscience, University Name \\
+%   \email{\{jane,john,alice\}@example.edu}}
+%
+% --- STYLE 3: Two authors, different affiliations (use \And) ---
+% \author{First Author \\
+%   Department of Example, University Name \\
+%   \email{first@example.edu}
+%   \And Second Author \\
+%   Another Department, Another University \\
+%   \email{second@example.edu}}
+%
+% --- STYLE 4: Many authors, traditional format (use \AND for row breaks) ---
+% \author{Author One \\
+%   Dept of Neuroscience, First Univ \\
+%   \email{one@first.edu}
+%   \And Author Two \\
+%   Dept of Psychology, Second Univ \\
+%   \email{two@second.edu}
+%   \AND Author Three \\   % \AND starts a new row
+%   Dept of Biology, Third Univ \\
+%   \email{three@third.edu}
+%   \And Author Four \\
+%   Dept of Physics, Fourth Univ \\
+%   \email{four@fourth.edu}}
+%
+% --- STYLE 5: Many authors, compact format (recommended for 3+ authors) ---
+% Use \affmark{} for superscript numbers, \affiliation{} to define them,
+% and optionally \emails{} for a shared email line.
+\author{%
+  Author One\affmark{1} \And
+  Author Two\affmark{1} \And
+  Author Three\affmark{2} \And
+  Author Four\affmark{2,3} \AND
+  Author Five\affmark{3} \And
+  Author Six\affmark{4} \And
+  Author Seven\affmark{4} \And
+  Author Eight\affmark{1,4}%
+}
+\affiliation{1}{Department of Neuroscience, First University}
+\affiliation{2}{Institute for Brain Research, Second University}
+\affiliation{3}{Center for Neural Computation, Third University}
+\affiliation{4}{Department of Psychology, Fourth University}
+\emails{author1@first.edu, author3@second.edu, corresponding@fourth.edu}
 
 
 \begin{document}
-\linenumbers
 
 \maketitle
 
-
-\section{Abstract}
-{
-\bf
-The abstract should be identical to the text version submitted in the web form and should not exceed 300 words. 
-CCN has an interdisciplinary audience. Hence a good abstract should
-(a) give context about what the problem is and why it matters 
-(b) give the contents and explain what was done and what was found
-(c) give a clear conclusion including what we learned and how it changes 
-the way we think about the universe.
-And because Konrad is writing this, he can not avoid shamelessly plugging
-his writing guide:
-\url{goo.gl/vC8tvf} See you at CCN.
-}
-\begin{quote}
-\small
-\textbf{Keywords:} 
-add your choice of indexing terms or keywords; kindly use a
-semicolon; between each term
-\end{quote}
+\begin{abstract}
+  The abstract should be identical to the text version submitted in the web form and
+  should not exceed 300 words.
+  CCN has an interdisciplinary audience.
+  Hence a good abstract should (a) give context about what the problem is and why it
+  matters (b) give the contents and explain what was done and what was found (c) give a
+  clear conclusion including what we learned and how it changes the way we think about
+  the universe.
+  And because Konrad is writing this, he can not avoid shamelessly plugging his writing
+  guide: \url{doi.org/10.1371/journal.pcbi.1005619}.
+  See you at CCN.
+\end{abstract}
 
 \section{General Formatting Instructions}
 
 The text, tables and figures of a CCN proceedings submission can be no longer than 8
-pages. This is including figures, tables, but excluding references.
+pages.
+This is including figures, tables, but excluding references and the supplement.
 
-The text of the paper should be formatted in two columns with an
-overall width of 7 inches (17.8 cm) and length of 9.25 inches (23.5
-cm), with 0.25 inches between the columns. Leave two line spaces
-between the last author listed and the text of the paper. The left
-margin should be 0.75 inches and the top margin should be 1 inch.
-Use 10~point Modern with 12~point vertical spacing, unless
-otherwise specified.
+The text of the paper should be formatted in two columns with an overall width of 7
+inches (17.8 cm) and length of 9.25 inches (23.5 cm), with 0.25 inches between the
+columns.
+Leave two line spaces between the last author listed and the text of the paper.
+The left margin should be 0.75 inches and the top margin should be 1 inch.
+Use 10~point Modern with 12~point vertical spacing, unless otherwise specified.
 
-The title should be in 14~point, bold, and centered. The title should
-be formatted with initial caps (the first letter of content words
-capitalized and the rest lower case). 
+The title should be in 14~point, bold, and centered.
+The title should be formatted with initial caps (the first letter of content words
+capitalized and the rest lower case).
 
-
-
-Indent the first line of each paragraph by 1/8~inch (except for the
-first paragraph of a new section). Do not add extra vertical space
-between paragraphs.
+Indent the first line of each paragraph by 1/8~inch (except for the first paragraph of
+a new section).
+Do not add extra vertical space between paragraphs.
 
 \section{Structure}
 
-We recommend a clear structure, typically including an introduction, followed by sections such as methods and results for experimental work (which may be substituted e.g. for theoretical work), and concluded with a discussion.
+We recommend a clear structure, typically including an introduction, followed by
+sections such as methods and results for experimental work (which may be substituted
+e.g. for theoretical work), and concluded with a discussion.
 
 \section{First Level Headings}
 
-First level headings should be in 12~point, initial caps, bold and
-centered. Leave one line space above the heading and 1/4~line space
-below the heading.
-
+First level headings should be in 12~point, initial caps, bold and centered.
+Leave one line space above the heading and 1/4~line space below the heading.
 
 \subsection{Second Level Headings}
 
-Second level headings should be 11~point, initial caps, bold, and
-flush left. Leave one line space above the heading and 1/4~line
-space below the heading.
-
+Second level headings should be 11~point, initial caps, bold, and flush left.
+Leave one line space above the heading and 1/4~line space below the heading.
 
 \subsubsection{Third Level Headings}
 
-Third level headings should be 10~point, initial caps, bold, and flush
-left. Leave one line space above the heading, but no space after the
-heading.
-
+Third level headings should be 10~point, initial caps, bold, and flush left.
+Leave one line space above the heading, but no space after the heading.
 
 \section{Formalities, Footnotes, and Floats}
 
-Use standard APA citation format. Citations within the text should
-include the author's last name and year. If the authors' names are
-included in the sentence, place only the year in parentheses, as in
-\cite{NewellSimon1972a}
-\cite{NewellSimon1972a}, but otherwise place the entire reference in
-parentheses with the authors and year separated by a comma
-\cite{NewellSimon1972a}. List multiple references alphabetically and
-separate them by semicolons
-\cite{ChalnickBillman1988a,NewellSimon1972a}. Use the
-``et~al.'' construction only after listing all the authors to a
-publication in an earlier reference and for citations with four or
-more authors.
-
+Use standard APA citation format.
+Citations within the text should include the author's last name and year.
+If the authors' names are included in the sentence, place only the year in parentheses,
+as in \citet{NewellSimon1972a}, but otherwise place the entire reference in parentheses
+with the authors and year separated by a comma \citep{NewellSimon1972a}.
+List multiple references alphabetically and separate them by semicolons
+\citep{ChalnickBillman1988a,NewellSimon1972a}.
+Use the ``et~al.'' construction only after listing all the authors to a publication in
+an earlier reference and for citations with four or more authors.
 
 \subsection{Footnotes}
 
-Indicate footnotes with a number\footnote{Sample of the first
-footnote.} in the text. Place the footnotes in 9~point type at the
-bottom of the column on which they appear. Precede the footnote block
-with a horizontal rule.\footnote{Sample of the second footnote.}
-
+Indicate footnotes with a number\footnote{Sample of the first footnote.} in the text.
+Place the footnotes in 9~point type at the bottom of the column on which they appear.
+Precede the footnote block with a horizontal rule.\footnote{Sample of the second
+footnote.}
 
 \subsection{Tables}
 
-Number tables consecutively. Place the table number and title (in
-10~point) above the table with one line space above the caption and
-one line space below it, as in Table~\ref{sample-table}. You may float
-tables to the top or bottom of a column, or set wide tables across
-both columns.
+Number tables consecutively.
+Place the table number and title (in 10~point) above the table with one line space
+above the caption and one line space below it, as in Table~\ref{sample-table}.
+You may float tables to the top or bottom of a column, or set wide tables across both
+columns.
 
 \begin{table*}[!ht]
-\begin{center} 
-\caption{Sample table title.} 
-\label{sample-table} 
-\vskip 0.12in
-\begin{tabular}{ll} 
-\hline
-Error type    &  Example \\
-\hline
-Take smaller        &   63 - 44 = 21 \\
-Always borrow~~~~   &   96 - 42 = 34 \\
-0 - N = N           &   70 - 47 = 37 \\
-0 - N = 0           &   70 - 47 = 30 \\
-\hline
-\end{tabular} 
-\end{center} 
+  \begin{center}
+    \caption{Sample table title.}
+    \label{sample-table}
+    \vskip 0.12in
+    \begin{tabular}{ll}
+      \hline
+      Error type        & Example      \\
+      \hline
+      Take smaller      & 63 - 44 = 21 \\
+      Always borrow~~~~ & 96 - 42 = 34 \\
+      0 - N = N         & 70 - 47 = 37 \\
+      0 - N = 0         & 70 - 47 = 30 \\
+      \hline
+    \end{tabular}
+  \end{center}
 \end{table*}
-
 
 \subsection{Figures}
 
-Make sure that the artwork can be printed well (e.g. dark colors) and that 
-the figures make understanding the paper easy.
- Number figures sequentially, placing the figure
-number and caption, in 10~point, after the figure with one line space
-above the caption and one line space below it, as in
-Figure~\ref{sample-figure}. If necessary, leave extra white space at
-the bottom of the page to avoid splitting the figure and figure
-caption. You may float figures to the top or bottom of a column, or
-set wide figures across both columns.
+Make sure that the artwork can be printed well (e.g. dark colors) and that the figures
+make understanding the paper easy.
+Number figures sequentially, placing the figure number and caption, in 10~point, after
+the figure with one line space above the caption and one line space below it, as in
+Figure~\ref{sample-figure}.
+If necessary, leave extra white space at the bottom of the page to avoid splitting the
+figure and figure caption.
+You may float figures to the top or bottom of a column, or set wide figures across both
+columns.
 
 \begin{figure}[ht]
-\begin{center}
-%\fbox{CCN figure}
-\fbox{\rule[-.5cm]{0cm}{2cm} \rule[-.5cm]{2cm}{0cm}}
-\end{center}
-\caption{This is a figure spanning a single column.} 
-\label{sample-figure}
+  \begin{center}
+    \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \end{center}
+  \caption{This is a figure spanning a single column.}
+  \label{sample-figure}
 \end{figure}
 
 \begin{figure*}[ht]
-\begin{center}
-%\fbox{CCN figure}
-\fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{8cm}{0cm}}
-\end{center}
-\caption{This is a figure spanning both columns.} 
-\label{sample-figure}
+  \begin{center}
+    \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{12cm}{0cm}}
+  \end{center}
+  \caption{This is a figure spanning both columns.}
+  \label{sample-figure-wide}
 \end{figure*}
 
+\subsection{Math}
 
-\section{Acknowledgments (camera-ready version only)}
+Display equations should be set out from the text and numbered for easy reference:
+\begin{equation}
+  P(H|D) = \frac{P(D|H)P(H)}{P(D)}~.
+\end{equation}
 
-Include acknowledgments \textbf{only} in the final accepted version of the manuscript. Include acknowledgments \textbf{only} in the final accepted version of the manuscript. 
+\section{Supplementary Materials}
 
+An ``{\bf Acknowledgments}'' section may appear before the references (and may extend
+to a 9th page) to include author contributions.
+Use of automated tools (such as generative AI) must be disclosed in this section,
+describing the tools used and their role (e.g., drafting, editing, code generation).
+A technical ``{\bf Appendix}'' may start on a new page after the references.
 
-\section{Double-blind review process}
+\section{Double-blind Review}
 
-CCN's reviewing process is double-blind, and it is the authors' responsibility to anonymize their submissions. Do not include any identifying information, such as author names, affiliations, or acknowledgments, in the abstract, main text, figures, or metadata. When citing your own work, ensure anonymity to maintain double-blind review standards (e.g., write “In previous work by Author et al. [1]…” instead of “In our previous work [1]...”). If citing a non-anonymous preprint (e.g., from arXiv, social media, or other websites), use anonymized phrasing (e.g., “Author et al. [1] concurrently demonstrate…”). Reviewers are instructed not to actively seek out such preprints, but their discovery does not constitute a conflict of interest. Alternatively, authors may choose not to cite their own non-anonymous preprints, such as those on arXiv. However, prior publications on related topics must be appropriately anonymized when cited.
-We encourage including links to code and artifacts in the spirit of open science, but please ensure that the linked material is anonymized; e.g. create a dedicated account to host your material rather than the account of one of the authors. Reviewers are not required to review linked material.
+CCN's reviewing process is double-blind, and it is the authors' responsibility to
+anonymize their submissions.
+Do not include any identifying information, such as author names, affiliations, or
+acknowledgments, in the abstract, main text, figures, or metadata.
+When citing your own work, ensure anonymity to maintain double-blind review standards
+(e.g., write "In previous work by Author et al.
+  [1]…" instead of "In our previous work [1]...").
+If citing a non-anonymous preprint (e.g., from arXiv, social media, or other websites),
+use anonymized phrasing (e.g., "Author et al.
+  [1] concurrently demonstrate…").
+Reviewers are instructed not to actively seek out such preprints, but their discovery
+does not constitute a conflict of interest.
+Alternatively, authors may choose not to cite their own non-anonymous preprints, such
+as those on arXiv.
+However, prior publications on related topics must be appropriately anonymized when
+cited.
+We encourage including links to code and artifacts in the spirit of open science, but
+please ensure that the linked material is anonymized; e.g. create a dedicated account
+to host your material rather than the account of one of the authors.
+Reviewers are not required to review linked material.
 
-\section{References Instructions}
+\section{Referencing Prior Work}
 
-Follow the APA Publication Manual for citation format, both within the
-text and in the reference list, with the following exceptions: (a) do
-not cite the page numbers of any book, including chapters in edited
-volumes; (b) use the same format for unpublished references as for
-published ones. Alphabetize references by the surnames of the authors,
-with single author entries preceding multiple author entries. Order
-references by the same authors by the year of publication, with the
-earliest first.
+Follow the APA Publication Manual for citation format, both within the text and in the
+reference list, with the following exceptions: (a) do not cite the page numbers of any
+book, including chapters in edited volumes; (b) use the same format for unpublished
+references as for published ones.
+Alphabetize references by the surnames of the authors, with single author entries
+preceding multiple author entries.
+Order references by the same authors by the year of publication, with the earliest
+first.
 
-Use a first level section heading, ``{\bf References}'', as shown
-below. Use a hanging indent style, with the first line of the
-reference flush against the left margin and subsequent lines indented
-by 1/8~inch. Below are example references for a conference paper, book
-chapter, journal article, dissertation, book, technical report, and
-edited volume, respectively.
+Use a first level section heading, ``{\bf References}'', as shown below.
+Use a hanging indent style, with the first line of the reference flush against the left
+margin and subsequent lines indented by 1/8~inch.
+Below are example references for a conference paper, book chapter, journal article,
+dissertation, book, technical report, and edited volume, respectively.
 
 \nocite{ChalnickBillman1988a}
 \nocite{Feigenbaum1963a}
 \nocite{Hill1983a}
 \nocite{OhlssonLangley1985a}
-% \nocite{Lewis1978a}
 \nocite{Matlock2001}
 \nocite{NewellSimon1972a}
 \nocite{ShragerLangley1990a}
 
-\newpage
-
-
-
-%\setlength{\bibleftmargin}{.125in}
-%\setlength{\bibindent}{-\bibleftmargin}
-
 \printbibliography
-
 
 \end{document}
